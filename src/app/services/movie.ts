@@ -6,7 +6,7 @@ const apiKey = `?apikey=${import.meta.env.VITE_OMDB_API_KEY}`;
 export const movieApi = createApi({
   reducerPath: "movieApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://www.omdbapi.com/`,
+    baseUrl: `https://www.omdbapi.com/`,
   }),
   endpoints: (builder) => ({
     getMoviesList: builder.query<IMovieSearch, string>({

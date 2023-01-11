@@ -10,10 +10,14 @@ const Favorites = () => {
     <div>
       <PageTitle title="Your favorite Movies" />
       <div className="my-8"></div>
-      <Table
-        movies={persistedFavoriteMovies.favorites}
-        isLoading={false}
-      />
+
+      {persistedFavoriteMovies.favorites.length !== 0 ? (
+        <Table movies={persistedFavoriteMovies.favorites} isLoading={false} />
+      ) : (
+        <p className="flex justify-center text-sm font-semibold">
+          No favorite movies yet
+        </p>
+      )}
     </div>
   );
 };
